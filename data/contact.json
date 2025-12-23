@@ -1,9 +1,3 @@
-
 {
-  "items": [
-    { "name": "Telegram", "value": "@Givshadi", "link": "https://t.me/Givshadi", "icon": "telegram", "color": "text-blue-400", "customIcon": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/1024px-Telegram_logo.svg.png" },
-    { "name": "LinkedIn", "value": "Ali Givshadi", "link": "https://www.linkedin.com/in/ali-givshadi", "icon": "linkedin", "color": "text-blue-600", "customIcon": "https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" },
-    { "name": "Email", "value": "ali.givshadi.mail@gmail.com", "link": "mailto:ali.givshadi.mail@gmail.com", "icon": "mail", "color": "text-red-500", "customIcon": "https://cdn-icons-png.flaticon.com/512/732/732200.png" },
-    { "name": "GitHub", "value": "giv-data", "link": "https://github.com/giv-data", "icon": "github", "color": "text-gray-800 dark:text-white", "customIcon": "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" }
-  ]
+  "items": []
 }

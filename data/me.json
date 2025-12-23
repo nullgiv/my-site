@@ -1,9 +1,15 @@
-
 {
   "seo": {
     "metaTitle": "System Log | NullGiv",
     "metaDescription": "System Node: NullGiv. Vector Systems Engineer & RAG Infrastructure Specialist.",
-    "keywords": ["Vector Systems", "RAG", "Go", "Rust", "Distributed Systems", "NullGiv"]
+    "keywords": [
+      "Vector Systems",
+      "RAG",
+      "Go",
+      "Rust",
+      "Distributed Systems",
+      "NullGiv"
+    ]
   },
-  "content": "[SYSTEM_NODE: NULLGIV]\n------------------------------------------------------------\nROLE: Vector Systems Architect | RAG Infrastructure Specialist\nSTATUS: Active_Research_Mode\nPORT_ACCESS:\n  - GH: github.com/nullgiv\n  - LI: linkedin.com/in/nullgiv\n  - EM: nullgiv@gmail.com\n  - TG: @NullGiv (Direct_Link_Only)\n------------------------------------------------------------\n\n[SYSTEM_LOG_ACCESS]\n------------------------------------------------------------\nIf you require formal verification of my trajectory:\n> [EXECUTE_DOWNLOAD: OFFICIAL_CV_FALLBACK_PDF](/assets/nullgiv-cv.pdf)\n------------------------------------------------------------\n\n[ABOUT_SYSTEM]\n> I am NullGiv. My engineering focus is the architecture and \n  scalability of high-performance AI retrieval systems.\n\n> CORE_MISSION:\n  Architecting semantic search pipelines and optimizing billion-scale \n  Vector Database clusters. I build the infrastructure where LLMs \n  meet enterprise-grade data.\n\n[OPERATIONAL_HISTORY]\n----------------------------------------------------------------------\n> NODE: GOOGLE\n  ROLE: Senior Staff Software Engineer (Gemini API Infrastructure)\n  PERIOD: 2023.01 — PRESENT [STATUS: ACTIVE]\n  LOCATION: Mountain View (Remote)\n  - Engineered distributed inference engines for Gemini API scale.\n  - Optimized gRPC layer: -40% P99 latency.\n\n> NODE: SPOTIFY\n  ROLE: Lead Backend Engineer (Data Platform)\n  PERIOD: 2021.03 — 2022.12 [STATUS: COMPLETED]\n  LOCATION: Stockholm, Sweden\n  - Architected analytics pipeline for 50TB/day event processing.\n  - Executed migration: Java Monolith -> Go Microservices.\n----------------------------------------------------------------------\n\n[END_OF_TRANSMISSION]"
+  "content": "[SYSTEM_NODE: NULLGIV]\n------------------------------------------------------------\n\n[END_OF_TRANSMISSION]"
 }

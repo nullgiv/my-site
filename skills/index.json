@@ -1,22 +1,5 @@
-
 {
   "version": "1.0",
   "total": 5,
-  "items": [
-    { 
-      "slug": "python", 
-      "title": "Python", 
-      "thumbnail": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
-    },
-    { 
-      "slug": "golang", 
-      "title": "Go", 
-      "thumbnail": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg"
-    },
-    { 
-      "slug": "react", 
-      "title": "React", 
-      "thumbnail": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
-    }
-  ]
+  "items": []
 }

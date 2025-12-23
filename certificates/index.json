@@ -1,23 +1,5 @@
-
 {
   "version": "1.0",
   "total": 2,
-  "items": [
-    {
-      "slug": "data-eng",
-      "title": "Advanced Data Engineering",
-      "provider": "Coursera - Google",
-      "link": "https://coursera.org",
-      "thumbnail": "https://picsum.photos/seed/cert1/300/200",
-      "date": "2024-01-10"
-    },
-    {
-      "slug": "aws-arch",
-      "title": "AWS Cloud Architect",
-      "provider": "Amazon Web Services",
-      "link": "https://aws.amazon.com/certification/",
-      "thumbnail": "https://picsum.photos/seed/cert2/300/200",
-      "date": "2024-02-20"
-    }
-  ]
+  "items": []
 }

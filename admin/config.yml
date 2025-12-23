@@ -282,6 +282,13 @@ collections:
                - {label: "Desc", name: "metaDescription", widget: "text"}
                - {label: "Keywords", name: "keywords", widget: "list", required: false}
 
+      - file: "public/data/skills.json"
+        name: "skills_matrix"
+        label: "Terminal: Skills Matrix"
+        fields:
+          - {label: "Header Text", name: "header", widget: "string", default: "[TECHNICAL_STACK_MATRIX]"}
+          - {label: "Matrix Content (Raw Text)", name: "content", widget: "code", default_language: "text", output_code_only: true, hint: "Use newlines for breaks. Similar to 'Me' terminal."}
+
       - file: "public/data/navigation.json"
         name: "navigation"
         label: "Navigation Menu"
