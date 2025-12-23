@@ -3,62 +3,103 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     
     <!-- PERFORMANCE: Hint Browsers regarding caching -->
     <meta http-equiv="Cache-Control" content="public, max-age=31536000, immutable">
+    <meta http-equiv="Pragma" content="cache">
     
-    <title>Ali Givshadi | Vector Systems Engineer</title>
+    <!-- PERFORMANCE: Preconnect to critical origins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://esm.sh">
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    
+    <!-- FALLBACK: DNS-Prefetch -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="dns-prefetch" href="https://esm.sh">
+    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
 
-    <!-- CRITICAL CSS: Layer Zero Optimizations -->
+    <!-- SEO & PWA Meta (Updated to relative paths) -->
+    <link rel="icon" href="./favicon.ico" sizes="any">
+    <link rel="icon" href="./assets/icons/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="./assets/icons/apple-touch-icon.png">
+    <link rel="manifest" href="./manifest.json">
+    <link rel="search" type="application/opensearchdescription+xml" title="Ali Givshadi's Portfolio" href="./opensearch.xml">
+    
+    <meta name="generator" content="React, Vite, TypeScript">
+    <meta name="subject" content="Personal portfolio of Ali Givshadi (علی گیوشادی).">
+    <meta name="rating" content="General">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="author" content="Ali Givshadi, ali.givshadi.mail@gmail.com">
+    <meta name="owner" content="Ali Givshadi">
+    <meta name="designer" content="Ali Givshadi">
+    <meta name="reply-to" content="ali.givshadi.mail@gmail.com">
+    <meta name="revisit-after" content="7 days">
+    
+    <meta name="keywords" content="ali givshadi, givshadi, aligivshadi, علی گیوشادی, گیوشادی, Vector Systems Engineer, RAG Infrastructure Specialist, Vector Database Optimization, Semantic Search Engineering, Retrieval-Augmented Generation, High-Dimensional Indexing, AI Infrastructure">
+
+    <!-- Dublin Core -->
+    <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/">
+    <meta name="DC.Title" content="Ali Givshadi | Vector Systems Engineer">
+    <meta name="DC.Creator" content="Ali Givshadi">
+    <meta name="DC.Subject" content="Personal portfolio of Ali Givshadi, Vector Systems Engineer & RAG Specialist.">
+    <meta name="DC.Description" content="Official portfolio of Ali Givshadi. Vector Systems Engineer specializing in RAG Infrastructure, Vector Database Optimization, and Semantic Search Pipelines.">
+    <meta name="DC.Publisher" content="Ali Givshadi">
+    <meta name="DC.Date" content="2024-07-01">
+    <meta name="DC.Type" content="Text">
+    <meta name="DC.Format" content="text/html">
+    <meta name="DC.Identifier" content="https://aligivshadi.ir">
+    <meta name="DC.Language" content="en">
+
+    <meta name="geo.region" content="IR-23">
+    <meta name="geo.placename" content="Tehran">
+    <meta name="ICBM" content="35.6892, 51.3890">
+
+    <meta name="msapplication-TileColor" content="#007AFF">
+    <meta name="msapplication-config" content="./browserconfig.xml">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="format-detection" content="telephone=no">
+
+    <!-- CRITICAL: Theme & Redirect Logic -->
+    <script>
+      (function() {
+        // --- 1. ADMIN REDIRECT LOGIC ---
+        // Robust check: works for root (/) and subdirectory (/repo/)
+        var path = window.location.pathname;
+        // Check if path contains /admin but is NOT the index.html
+        if (path.indexOf('/admin') !== -1 && path.indexOf('/admin/index.html') === -1) {
+            // Only redirect if it looks like they are trying to access the admin panel folder
+            // This regex checks for ends with /admin or /admin/
+            if (/\/admin\/?$/.test(path)) {
+                window.stop();
+                // Construct relative path to admin index
+                // Note: On GH Pages, we might need to be careful, but absolute from root usually works
+                // if base tag is not used. Since we are in SPA, we force a hard navigation.
+                
+                // Fix: Find where /admin starts and append index.html
+                var newPath = path.substring(0, path.indexOf('/admin') + 6) + '/index.html';
+                // Remove double slashes if any
+                newPath = newPath.replace('//', '/');
+                window.location.replace(newPath + window.location.search);
+                return;
+            }
+        }
+
+        // --- 2. THEME LOGIC ---
+        // Force Dark Mode default for consistency with App.tsx
+        document.documentElement.classList.add('dark');
+        document.querySelector('meta[name="theme-color"]')?.setAttribute('content', '#000000');
+      })();
+    </script>
+
+    <meta name="theme-color" content="#000000">
+    <title>Ali Givshadi | Vector Systems Engineer & RAG Infrastructure</title>
+
+    <!-- CRITICAL CSS -->
     <style>
-      /* --- GLOBAL RESET & GPU HINTS --- */
-      *, *::before, *::after { 
-        box-sizing: border-box; 
-        /* Remove mobile tap highlight color (Blue flash) */
-        -webkit-tap-highlight-color: transparent;
-      }
-
-      html { 
-        -webkit-text-size-adjust: 100%; 
-        font-family: 'Inter', system-ui, sans-serif; 
-        line-height: 1.5;
-        height: 100%;
-        /* Eliminate scroll lag on mobile */
-        overscroll-behavior-y: none;
-        scroll-behavior: smooth;
-      }
-
-      body { 
-        margin: 0; 
-        height: 100%;
-        width: 100%;
-        overflow: hidden;
-        background-color: #ffffff;
-        color: #000000;
-        -webkit-font-smoothing: antialiased;
-        /* Accelerate painting */
-        transform: translateZ(0); 
-        backface-visibility: hidden;
-        /* Remove 300ms tap delay on old browsers & optimize interactions */
-        touch-action: manipulation; 
-      }
-
-      /* Dark Mode Base */
-      @media (prefers-color-scheme: dark) {
-        body { background-color: #000000; color: #ffffff; }
-      }
-
-      #root { 
-        display: flex; 
-        flex-direction: column; 
-        height: 100%; 
-        width: 100%;
-        /* Contain layout recalculations to root */
-        contain: layout style; 
-      }
-
-      /* --- FONT OPTIMIZATION: Zero Layout Shift --- */
       @font-face {
         font-family: 'Inter Fallback';
         src: local('Arial');
@@ -67,53 +108,135 @@
         line-gap-override: 0%;
         size-adjust: 107.6%;
       }
-      body { font-family: 'Inter', 'Inter Fallback', sans-serif; }
 
-      /* --- PERFORMANCE CLASSES --- */
-      /* Use on long lists/articles to skip rendering off-screen content */
-      .cv-auto { 
-        content-visibility: auto; 
-        contain-intrinsic-size: 1px 500px; 
+      :root {
+        --ios-bg: #000000;
+        --ios-text: #ffffff;
+        --font-stack: 'Inter', 'Inter Fallback', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      }
+      .dark {
+        --ios-bg: #000000;
+        --ios-text: #ffffff;
+      }
+
+      html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        background-color: var(--ios-bg);
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: var(--font-stack);
+        background-color: var(--ios-bg);
+        color: var(--ios-text);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        height: 100%;
+        width: 100%;
+        overflow: hidden; 
+        padding-bottom: env(safe-area-inset-bottom);
+      }
+
+      #root {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+
+      ::-webkit-scrollbar { width: 0px; background: transparent; }
+      
+      .glass-ios {
+        background-color: rgba(0, 0, 0, 0.85);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
       }
       
-      /* GPU Promotion Class */
-      .gpu-accelerated {
-        transform: translateZ(0);
-        will-change: transform, opacity;
-      }
-
-      /* --- PRINT STYLES --- */
-      @media print {
-        body * { visibility: hidden; }
-        .printable-area, .printable-area * { visibility: visible; }
-        .printable-area { position: absolute; left: 0; top: 0; width: 100%; }
-        .no-print, header, nav, aside { display: none !important; }
-        html, body, #root { height: auto !important; overflow: visible !important; }
-      }
+      input, textarea { font-size: 16px !important; }
+      
+      .cv-auto { content-visibility: auto; contain-intrinsic-size: 1px 150px; }
     </style>
 
-    <!-- SEO & PWA -->
-    <link rel="icon" href="/favicon.ico" sizes="any">
-    <link rel="icon" href="/assets/icons/icon.svg" type="image/svg+xml">
-    <link rel="manifest" href="/manifest.json">
-    <link rel="search" type="application/opensearchdescription+xml" title="Ali Givshadi" href="/opensearch.xml">
-
-    <!-- FONTS: Async Load -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
+    
+    <link 
+      rel="preload" 
+      as="style" 
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    >
+    <link 
+      rel="stylesheet" 
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" 
+      media="print" 
+      onload="this.media='all'"
+    >
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
+    </noscript>
 
-    <!-- TAILWIND -->
-    <script src="https://cdn.tailwindcss.com?plugins=typography" defer></script>
+    <link rel="preload" as="style" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" media="print" onload="this.media='all'">
+
+    <style media="print">
+        html, body {
+          height: auto !important;
+          overflow: visible !important;
+          background: white !important;
+          color: black !important;
+          width: 100% !important;
+          margin: 0 !important;
+          padding: 0 !important;
+        }
+        #root {
+          display: block !important;
+          height: auto !important;
+          overflow: visible !important;
+        }
+    </style>
+
+    <script src="https://cdn.tailwindcss.com?plugins=typography" fetchpriority="high"></script>
     <script>
       tailwind.config = {
         darkMode: 'class',
         theme: {
           extend: {
-            fontFamily: { sans: ['Inter', 'Inter Fallback', 'sans-serif'] },
+            fontFamily: {
+              sans: ['Inter', 'Inter Fallback', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', 'sans-serif'],
+            },
             colors: {
-              ios: { bg: '#ffffff', bgDark: '#000000', text: '#000000', textDark: '#ffffff' }
+              ios: {
+                bg: '#000000',
+                bgDark: '#000000',
+                header: 'rgba(0, 0, 0, 0.85)',
+                headerDark: 'rgba(0, 0, 0, 0.85)',
+                search: '#1c1c1e',
+                searchDark: '#1c1c1e',
+                separator: '#38383a',
+                separatorDark: '#38383a',
+                blue: '#007AFF',
+                text: '#ffffff',
+                textDark: '#ffffff',
+                gray: '#98989d',
+                grayDark: '#98989d'
+              }
+            },
+            animation: {
+              'ios-slide-in': 'iosSlideIn 0.3s cubic-bezier(0.32, 0.72, 0, 1) forwards',
+              'ios-fade-in': 'iosFadeIn 0.2s ease-out forwards',
+            },
+            keyframes: {
+              iosSlideIn: {
+                '0%': { transform: 'translateX(100%)' },
+                '100%': { transform: 'translateX(0)' },
+              },
+              iosFadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              }
             }
           }
         }
@@ -131,23 +254,49 @@
     "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
     "vite": "https://esm.sh/vite@^7.3.0",
     "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2",
+    "react-markdown": "https://esm.sh/react-markdown@^10.1.0",
+    "rehype-raw": "https://esm.sh/rehype-raw@^7.0.0",
+    "remark-gfm": "https://esm.sh/remark-gfm@^4.0.1",
+    "remark-math": "https://esm.sh/remark-math@^6.0.0",
+    "rehype-katex": "https://esm.sh/rehype-katex@^7.0.1",
+    "mermaid": "https://esm.sh/mermaid@^11.12.2",
+    "react-syntax-highlighter": "https://esm.sh/react-syntax-highlighter@^16.1.0",
+    "react-syntax-highlighter/": "https://esm.sh/react-syntax-highlighter@^16.1.0/",
     "vite-plugin-compression": "https://esm.sh/vite-plugin-compression@^0.5.1"
   }
 }
 </script>
-  <script type="module" crossorigin src="/assets/index-BTnv_wOF.js"></script>
-  <link rel="modulepreload" crossorigin href="/assets/v-react-Busfyodu.js">
+  <script type="module" crossorigin src="./assets/index-CKOIpwQE.js"></script>
+  <link rel="modulepreload" crossorigin href="./assets/v-react-Busfyodu.js">
 </head>
-  <body class="bg-ios-bg dark:bg-ios-bgDark text-ios-text dark:text-ios-textDark">
+  <body class="bg-ios-bg dark:bg-ios-bgDark text-ios-text dark:text-ios-textDark pb-[env(safe-area-inset-bottom)]">
     <div id="root"></div>
-    <script>
-      try {
-        if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-          document.documentElement.classList.add('dark');
+    <!-- CRITICAL FIX: Use relative path for entry point -->
+    
+    <script defer>
+      (function() {
+        var runBackgroundTasks = function() {
+          setTimeout(function() {
+            var task = function() {
+              if (navigator.storage && navigator.storage.persist) {
+                navigator.storage.persist().catch(function() {});
+              }
+            };
+
+            if ('requestIdleCallback' in window) {
+              requestIdleCallback(task, { timeout: 2000 });
+            } else {
+              task();
+            }
+          }, 5000);
+        };
+
+        if (document.readyState === 'complete') {
+          runBackgroundTasks();
         } else {
-          document.documentElement.classList.remove('dark');
+          window.addEventListener('load', runBackgroundTasks, { once: true });
         }
-      } catch (_) {}
+      })();
     </script>
 </body>
 </html>
