@@ -1,0 +1,115 @@
+
+{
+  "items": [
+    {
+      "id": "exp1",
+      "company": "Google",
+      "role": "Senior Staff Software Engineer",
+      "startDate": "2023-01",
+      "endDate": "Present",
+      "description": "Leading the core infrastructure team for Gemini API. Optimized distributed inference latency by 40% using custom gRPC extensions and advanced caching strategies. Mentoring senior engineers and defining architectural roadmaps for AI-at-scale.",
+      "location": "Mountain View, CA (Remote)",
+      "employmentType": "Full-time",
+      "website": "https://google.com"
+    },
+    {
+      "id": "exp2",
+      "company": "Spotify",
+      "role": "Lead Backend Engineer",
+      "startDate": "2021-03",
+      "endDate": "2022-12",
+      "description": "Architected the new 'Spotify for Artists' analytics pipeline capable of processing 50TB of daily event data. Migrated legacy Java monoliths to Go microservices, reducing cloud costs by 25%.",
+      "location": "Stockholm, Sweden",
+      "employmentType": "Full-time",
+      "website": "https://spotify.com"
+    },
+    {
+      "id": "exp3",
+      "company": "Toptal",
+      "role": "Senior Distributed Systems Engineer",
+      "startDate": "2019-06",
+      "endDate": "2021-02",
+      "description": "Worked as a top 3% freelancer with Fortune 500 clients. Designed a real-time bidding system for a major AdTech firm using Rust and Kafka, achieving sub-millisecond latency requirements.",
+      "location": "Global",
+      "employmentType": "Freelance",
+      "website": "https://toptal.com"
+    },
+    {
+      "id": "exp4",
+      "company": "Snapp!",
+      "role": "Senior DevOps Engineer",
+      "startDate": "2018-01",
+      "endDate": "2019-05",
+      "description": "Managed Kubernetes clusters serving 2M+ daily active users. Implemented GitOps workflows with ArgoCD and Helm, improving deployment frequency from weekly to daily.",
+      "location": "Tehran, Iran",
+      "employmentType": "Full-time",
+      "website": "https://snapp.ir"
+    },
+    {
+      "id": "exp5",
+      "company": "Digikala",
+      "role": "Backend Developer (Big Data)",
+      "startDate": "2016-08",
+      "endDate": "2017-12",
+      "description": "Developed the product recommendation engine using Python and Spark. Optimized PostgreSQL queries for the Black Friday sale event, handling 50k requests per second.",
+      "location": "Tehran, Iran",
+      "employmentType": "Full-time",
+      "website": "https://digikala.com"
+    },
+    {
+      "id": "exp6",
+      "company": "Cafebazaar",
+      "role": "Platform Engineer",
+      "startDate": "2015-05",
+      "endDate": "2016-07",
+      "description": "Built internal developer tools and CI/CD pipelines. Maintained high-availability Redis clusters for session management across the Android app store.",
+      "location": "Tehran, Iran",
+      "employmentType": "Full-time",
+      "website": "https://cafebazaar.ir"
+    },
+    {
+      "id": "exp7",
+      "company": "Upwork",
+      "role": "Full Stack Developer",
+      "startDate": "2014-01",
+      "endDate": "2015-04",
+      "description": "Completed 40+ projects ranging from React dashboards to Node.js REST APIs. Specialized in building MVPs for early-stage startups in FinTech and HealthTech sectors.",
+      "location": "Remote",
+      "employmentType": "Contract",
+      "website": "https://upwork.com"
+    },
+    {
+      "id": "exp8",
+      "company": "ParsOnline",
+      "role": "Network Automation Engineer",
+      "startDate": "2013-02",
+      "endDate": "2013-12",
+      "description": "Automated network configuration backups and switch provisioning using Python scripts and Ansible. Reduced manual configuration errors by 90%.",
+      "location": "Tehran, Iran",
+      "employmentType": "Full-time",
+      "website": "https://parsonline.com"
+    },
+    {
+      "id": "exp9",
+      "company": "Sharif University of Tech",
+      "role": "Research Assistant",
+      "startDate": "2012-09",
+      "endDate": "2013-01",
+      "description": "Researched distributed consensus algorithms (Paxos/Raft). Implemented a prototype distributed key-value store for academic benchmarking.",
+      "location": "Tehran, Iran",
+      "employmentType": "Part-time",
+      "website": "https://sharif.edu"
+    },
+    {
+      "id": "exp10",
+      "company": "Freelance",
+      "role": "Web Developer",
+      "startDate": "2011-06",
+      "endDate": "2012-08",
+      "description": "Started career building custom WordPress themes and PHP plugins for local businesses. Learned the fundamentals of web hosting, DNS, and SEO.",
+      "location": "Tehran, Iran",
+      "employmentType": "Freelance",
+      "website": "#"
+    }
+  ]
+}

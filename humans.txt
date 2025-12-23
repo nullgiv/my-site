@@ -1,0 +1,18 @@
+
+# humans.txt
+# We are people, not machines.
+
+# TEAM
+----------------------------------
+Lead Architect: NullGiv
+Contact: nullgiv [at] gmail.com
+LinkedIn: https://www.linkedin.com/in/nullgiv/
+GitHub: https://github.com/nullgiv
+From: Tehran, Iran
+
+# SITE
+----------------------------------
+Last update: 2024/07/01
+Standards: HTML5, CSS3, ES6, React
+Components: Custom components with a focus on performance
+Software: VS Code, Vite, TypeScript, Netlify/Decap CMS

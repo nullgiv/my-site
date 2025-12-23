@@ -1,0 +1,30 @@
+
+{
+  "version": "1.0",
+  "total": 3,
+  "items": [
+    {
+      "slug": "high-freq-trading",
+      "title": "High-Frequency Trading Engine (HFT)",
+      "description": "An ultra-low latency trading engine built with C++ and Rust, designed to execute orders in microseconds. This project utilizes kernel-bypass networking (DPDK) to minimize packet processing overhead and implements a custom lock-free ring buffer for inter-thread communication. The system allows for real-time market data ingestion from multiple exchanges via WebSocket and FIX protocol, applying complex arbitrage strategies on the fly. It includes a comprehensive backtesting suite written in Python to validate strategies against historical data before deployment. The architecture is fully event-driven and optimized for modern multi-core processors, ensuring 99.999% uptime during market hours.",
+      "date": "2024-02",
+      "githubLink": "https://github.com/aligivshadi/hft-engine",
+      "externalLink": "https://hft.example.com"
+    },
+    {
+      "slug": "ai-medical-diagnosis",
+      "title": "AI-Powered Medical Imaging Diagnosis",
+      "description": "A comprehensive deep learning solution for detecting anomalies in X-Ray and MRI scans. Leveraging a modified ResNet-50 architecture and Transfer Learning, the model achieves 94% accuracy in identifying early-stage pneumonia and tumors. The backend is powered by FastAPI and serves the model via TorchServe, ensuring scalability. The system includes a secure, HIPAA-compliant dashboard for doctors to upload scans and receive instant heatmaps indicating potential problem areas. The project also features a CI/CD pipeline that automatically retrains the model as new verified datasets become available.",
+      "date": "2023-11",
+      "githubLink": "https://github.com/aligivshadi/med-ai"
+    },
+    {
+      "slug": "portfolio-v3",
+      "title": "Minimalist Portfolio V3",
+      "description": "The current version of my personal portfolio. Built with React, TypeScript, and Vite, featuring a completely file-based CMS architecture (Git-based) to allow editing content directly from GitHub. It includes a custom virtual scrolling engine for high performance.",
+      "date": "2024-06",
+      "githubLink": "https://github.com/aligivshadi/portfolio-v3",
+      "externalLink": "https://aligivshadi.ir"
+    }
+  ]
+}

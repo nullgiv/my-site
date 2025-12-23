@@ -1,0 +1,9 @@
+
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/"
+                       xmlns:moz="http://www.mozilla.org/2006/browser/search/">
+  <ShortName>NullGiv</ShortName>
+  <Description>Search articles and projects on NullGiv's portfolio</Description>
+  <InputEncoding>UTF-8</InputEncoding>
+  <Image width="16" height="16" type="image/x-icon">https://aligivshadi.ir/favicon.ico</Image>
+  <Url type="text/html" template="https://aligivshadi.ir/#articles?q={searchTerms}" />
+</OpenSearchDescription>

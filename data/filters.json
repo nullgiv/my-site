@@ -1,0 +1,13 @@
+{
+  "articles": [
+    {
+      "key": "category",
+      "label": "دسته‌بندی",
+      "options": [
+        { "label": "مهندسی داده", "value": "data" },
+        { "label": "فرانت‌اند", "value": "frontend" },
+        { "label": "DevOps", "value": "devops" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+
+{
+  "articles": {
+    "metaTitle": "Engineering Log | NullGiv",
+    "metaDescription": "Deep dives into system architecture, vector databases, and low-level engineering by NullGiv.",
+    "keywords": ["engineering blog", "system design articles", "nullgiv blog", "rust tutorials", "rag architecture"],
+    "ogImage": "/assets/og-articles.jpg"
+  },
+  "projects": {
+    "metaTitle": "Projects & Labs | NullGiv",
+    "metaDescription": "Archive of high-frequency trading engines, AI infrastructure, and open-source tools built by NullGiv.",
+    "keywords": ["nullgiv projects", "github", "open source", "system software", "ai infrastructure"],
+    "ogImage": "/assets/og-projects.jpg"
+  },
+  "skills": {
+    "metaTitle": "Tech Stack Matrix | NullGiv",
+    "metaDescription": "Technical capabilities and stack matrix of NullGiv. From Kernel-bypass networking to Large Language Models.",
+    "keywords": ["tech stack", "skills matrix", "rust", "go", "kubernetes", "vector databases"],
+    "ogImage": "/assets/og-skills.jpg"
+  },
+  "certificates": {
+    "metaTitle": "Credentials | NullGiv",
+    "metaDescription": "Professional certifications and verified credentials of NullGiv.",
+    "keywords": ["certifications", "aws certified", "google cloud professional", "nullgiv"],
+    "ogImage": "/assets/og-certificates.jpg"
+  }
+}

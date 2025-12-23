@@ -1,0 +1,336 @@
+
+backend:
+  name: git-gateway
+
+local_backend: true
+
+media_folder: "public/assets"
+public_folder: "/assets"
+
+locale: 'en'
+logo_url: /assets/icons/icon-192x192.png
+search: true
+
+# Clean URL configuration
+slug:
+  encoding: "unicode"
+  clean_accents: true
+  sanitize_replacement: "-"
+
+collections:
+  # =========================================
+  # 📚 ARTICLES MODULE
+  # =========================================
+  - name: "article_index"
+    label: "📚 Articles (List)"
+    label_singular: "Article Entry"
+    editor:
+      preview: false
+    files:
+      - file: "public/articles/index.json"
+        name: "index"
+        label: "Manage Article Index"
+        fields:
+          - {label: "Version", name: "version", widget: "hidden", default: "1.3"}
+          - {label: "Total Count", name: "total", widget: "number", default: 0, hint: "Update manually if needed or ignore"}
+          - label: "Article Entries"
+            name: "items"
+            widget: "list"
+            add_to_top: true
+            summary: "{{title}} ({{date}})"
+            fields:
+              - label: "Linked Content Slug"
+                name: "slug"
+                widget: "relation"
+                collection: "article_content"
+                search_fields: ["title", "slug"]
+                value_field: "slug"
+                display_fields: ["title", "slug"]
+                required: true
+                hint: "Select the content file this entry points to."
+              - {label: "Display Title", name: "title", widget: "string"}
+              - {label: "Short Description", name: "description", widget: "text"}
+              - {label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false}
+              - {label: "Thumbnail", name: "thumbnail", widget: "image", required: false}
+
+  - name: "article_content"
+    label: "📝 Articles (Content)"
+    folder: "public/articles/content"
+    create: true
+    identifier_field: "slug" 
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    sortable_fields: ['date', 'title']
+    view_groups:
+      - label: Year
+        field: date
+        pattern: \d{4}
+    fields:
+      - {label: "Slug", name: "slug", widget: "string", pattern: ['^[a-z0-9-]+$', "Lowercase, numbers and hyphens only"]}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DD"}
+      
+      - label: "🚀 SEO Configuration"
+        name: "seo"
+        widget: "object"
+        collapsed: true
+        fields:
+          - {label: "Meta Title", name: "metaTitle", widget: "string", required: false}
+          - {label: "Meta Description", name: "metaDescription", widget: "text", required: false}
+          - {label: "Canonical URL", name: "canonicalUrl", widget: "string", required: false}
+          - {label: "Social Image", name: "ogImage", widget: "image", required: false}
+          - {label: "Keywords", name: "keywords", widget: "list", required: false}
+          - {label: "NoIndex", name: "noIndex", widget: "boolean", default: false}
+
+      - label: "❓ FAQ Section"
+        name: "faq"
+        widget: "list"
+        collapsed: true
+        summary: "{{question}}"
+        fields:
+          - {label: "Question", name: "question", widget: "string"}
+          - {label: "Answer", name: "answer", widget: "markdown"}
+      
+      - {label: "Body Content", name: "body", widget: "markdown", hint: "Supports Markdown, Mermaid Charts, and HTML"}
+
+  # =========================================
+  # ⚡ SKILLS MODULE
+  # =========================================
+  - name: "skill_index"
+    label: "⚡ Skills (List)"
+    files:
+      - file: "public/skills/index.json"
+        name: "index"
+        label: "Manage Skill Index"
+        fields:
+          - {label: "Version", name: "version", widget: "hidden", default: "1.0"}
+          - {label: "Total", name: "total", widget: "hidden", default: 0}
+          - label: "Skill Entries"
+            name: "items"
+            widget: "list"
+            summary: "{{title}}"
+            fields:
+              - label: "Linked Content Slug"
+                name: "slug"
+                widget: "relation"
+                collection: "skill_content"
+                search_fields: ["title", "slug"]
+                value_field: "slug"
+                display_fields: ["title"]
+                required: true
+              - {label: "Display Title", name: "title", widget: "string"}
+              - {label: "Icon/Thumbnail", name: "thumbnail", widget: "image"}
+
+  - name: "skill_content"
+    label: "🧠 Skills (Content)"
+    folder: "public/skills/content"
+    create: true
+    identifier_field: "slug"
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    fields:
+      - {label: "Slug", name: "slug", widget: "string", pattern: ['^[a-z0-9-]+$', "Lowercase only"]}
+      - {label: "Title", name: "title", widget: "string"}
+      
+      - label: "SEO"
+        name: "seo"
+        widget: "object"
+        collapsed: true
+        fields:
+          - {label: "Meta Description", name: "metaDescription", widget: "text", required: false}
+      
+      - {label: "Body Content", name: "body", widget: "markdown"}
+
+  # =========================================
+  # 🗄️ DATA TABLES (Experience, Projects, etc.)
+  # =========================================
+  - name: "data_collections"
+    label: "🗄️ Database Tables"
+    files:
+      - file: "public/data/projects.json"
+        name: "projects"
+        label: "Projects Archive"
+        fields:
+          - label: "Projects List"
+            name: "items"
+            widget: "list"
+            summary: "{{id}} - {{title}}"
+            fields:
+              - {label: "Project ID", name: "id", widget: "string"}
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Tech Stack", name: "tech", widget: "string"}
+              - {label: "Key Metric (Key)", name: "kv_pair", widget: "object", fields: [{name: "key", widget: "string"}, {name: "value", widget: "string"}]}
+              - {label: "Feature Bullets", name: "bullets", widget: "list"}
+              - {label: "Status", name: "status", widget: "select", options: ["LIVE_SYSTEM", "SOURCE_CODE_AVAILABLE", "PRIVATE", "ARCHIVED"]}
+
+      - file: "public/data/experience.json"
+        name: "experience"
+        label: "Experience History"
+        fields:
+          - label: "Work History"
+            name: "items"
+            widget: "list"
+            summary: "{{company}} - {{role}}"
+            fields:
+              - {label: "ID", name: "id", widget: "string", default: "exp_"}
+              - {label: "Company", name: "company", widget: "string"}
+              - {label: "Role", name: "role", widget: "string"}
+              - {label: "Start Date", name: "startDate", widget: "string", hint: "YYYY-MM"}
+              - {label: "End Date", name: "endDate", widget: "string", hint: "YYYY-MM or Present"}
+              - {label: "Description", name: "description", widget: "text"}
+              - {label: "Location", name: "location", widget: "string"}
+              - {label: "Type", name: "employmentType", widget: "select", options: ["Full-time", "Contract", "Freelance"]}
+              - {label: "Website", name: "website", widget: "string", required: false}
+
+      - file: "public/certificates/index.json"
+        name: "certificates"
+        label: "Certificates"
+        fields:
+          - {label: "Version", name: "version", widget: "hidden", default: "1.0"}
+          - {label: "Total", name: "total", widget: "hidden", default: 0}
+          - label: "Certificates List"
+            name: "items"
+            widget: "list"
+            summary: "{{title}}"
+            fields:
+              - {label: "Slug", name: "slug", widget: "string"}
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Provider", name: "provider", widget: "string"}
+              - {label: "Validation Link", name: "link", widget: "string"}
+              - {label: "Image/Certificate", name: "thumbnail", widget: "image"}
+              - {label: "Issue Date", name: "date", widget: "datetime", format: "YYYY-MM-DD", time_format: false}
+
+      - file: "public/data/contact.json"
+        name: "contact"
+        label: "Contact Links"
+        fields:
+          - label: "Links"
+            name: "items"
+            widget: "list"
+            summary: "{{name}}"
+            fields:
+              - {label: "Platform Name", name: "name", widget: "string"}
+              - {label: "Display Value", name: "value", widget: "string"}
+              - {label: "URL", name: "link", widget: "string"}
+              - {label: "Icon Type", name: "icon", widget: "select", options: ["mail", "linkedin", "twitter", "telegram", "github", "phone", "custom"]}
+              - {label: "Custom Icon URL", name: "customIcon", widget: "image", required: false}
+              - {label: "Tailwind Color Class", name: "color", widget: "string"}
+
+  # =========================================
+  # ⚙️ SITE CONFIGURATION
+  # =========================================
+  - name: "settings"
+    label: "⚙️ Site Configuration"
+    files:
+      - file: "public/data/home.json"
+        name: "home_config"
+        label: "Global Identity (Home)"
+        fields:
+          - {label: "Full Name", name: "fullName", widget: "string"}
+          - {label: "Job Title", name: "jobTitle", widget: "string"}
+          - {label: "Bio Summary", name: "bio", widget: "text"}
+          - {label: "Site Logo", name: "siteLogo", widget: "image"}
+          - {label: "Profile Photo", name: "profileImage", widget: "image"}
+          - {label: "Twitter Handle", name: "twitterHandle", widget: "string"}
+          - {label: "Location", name: "location", widget: "string"}
+          - {label: "Location Flag", name: "locationFlag", widget: "string"}
+          - {label: "Job Status", name: "jobStatus", widget: "select", options: ["open", "closed", "passive"]}
+          - label: "Typewriter Texts"
+            name: "typingTexts"
+            widget: "list"
+          - label: "Alternate Names" 
+            name: "alternateNames" 
+            widget: "list" 
+            required: false
+          - label: "Languages"
+            name: "languages"
+            widget: "list"
+            fields:
+               - {label: "Name", name: "name", widget: "string"}
+               - {label: "Level", name: "level", widget: "string"}
+          - label: "Default SEO"
+            name: "seo"
+            widget: "object"
+            fields:
+              - {label: "Meta Title", name: "metaTitle", widget: "string"}
+              - {label: "Meta Description", name: "metaDescription", widget: "text"}
+              - {label: "OG Image", name: "ogImage", widget: "image"}
+              - {label: "Keywords", name: "keywords", widget: "list", required: false}
+
+      - file: "public/data/about.json"
+        name: "about_page"
+        label: "About Page"
+        fields:
+          - {label: "Page Title", name: "title", widget: "string"}
+          - {label: "Short Bio", name: "bio", widget: "text"}
+          - {label: "Full Story (Markdown)", name: "story", widget: "markdown"}
+          - {label: "Avatar Image", name: "avatar", widget: "image"}
+
+      - file: "public/data/me.json"
+        name: "me_page"
+        label: "Terminal: Me"
+        fields:
+          - {label: "CV File (PDF)", name: "cvFile", widget: "file", required: false}
+          - {label: "Terminal Content (Raw Text)", name: "content", widget: "code", default_language: "text", output_code_only: true}
+          - label: "SEO"
+            name: "seo"
+            widget: "object"
+            fields:
+               - {label: "Title", name: "metaTitle", widget: "string"}
+               - {label: "Desc", name: "metaDescription", widget: "text"}
+               - {label: "Keywords", name: "keywords", widget: "list", required: false}
+
+      - file: "public/data/navigation.json"
+        name: "navigation"
+        label: "Navigation Menu"
+        fields:
+          - label: "Mobile Menu"
+            name: "mobile"
+            widget: "list"
+            fields: [{name: "id", widget: "string"}, {name: "label", widget: "string"}, {name: "icon", widget: "string"}]
+          - label: "Desktop Menu"
+            name: "desktop"
+            widget: "list"
+            fields: [{name: "id", widget: "string"}, {name: "label", widget: "string"}, {name: "icon", widget: "string"}]
+
+      - file: "public/data/ui-text.json"
+        name: "ui_text"
+        label: "UI Text / Translations"
+        fields:
+          - label: "Common Buttons/Labels"
+            name: "common"
+            widget: "object"
+            fields:
+              - {label: "Search Placeholder", name: "searchPlaceholder", widget: "string"}
+              - {label: "Back Button", name: "backButton", widget: "string"}
+              - {label: "Download Button", name: "downloadButton", widget: "string"}
+              - {label: "Loading Text", name: "loading", widget: "string"}
+          - label: "Profile Section"
+            name: "profile"
+            widget: "object"
+            fields:
+               - {label: "My Articles", name: "myArticles", widget: "string"}
+               - {label: "History", name: "history", widget: "string"}
+
+      - file: "public/data/seo-pages.json"
+        name: "seo_pages"
+        label: "Page-Specific SEO"
+        fields:
+          - label: "Articles Page"
+            name: "articles"
+            widget: "object"
+            fields: [{name: "metaTitle", widget: "string"}, {name: "metaDescription", widget: "text"}, {name: "ogImage", widget: "image"}]
+          - label: "Projects Page"
+            name: "projects"
+            widget: "object"
+            fields: [{name: "metaTitle", widget: "string"}, {name: "metaDescription", widget: "text"}, {name: "ogImage", widget: "image"}]
+          - label: "Skills Page"
+            name: "skills"
+            widget: "object"
+            fields: [{name: "metaTitle", widget: "string"}, {name: "metaDescription", widget: "text"}, {name: "ogImage", widget: "image"}]
+          - label: "Certificates Page"
+            name: "certificates"
+            widget: "object"
+            fields: [{name: "metaTitle", widget: "string"}, {name: "metaDescription", widget: "text"}, {name: "ogImage", widget: "image"}]

@@ -1,0 +1,15 @@
+
+{
+  "mobile": [
+    { "id": "home", "label": "Home", "icon": "home" },
+    { "id": "articles", "label": "Log", "icon": "book" },
+    { "id": "contact", "label": "Contact", "icon": "mail" }
+  ],
+  "desktop": [
+    { "id": "articles", "label": "Articles", "icon": "book" },
+    { "id": "projects", "label": "Projects", "icon": "briefcase" },
+    { "id": "skills", "label": "Skills", "icon": "cpu" },
+    { "id": "certificates", "label": "Docs", "icon": "file-badge" },
+    { "id": "about", "label": "About", "icon": "file-text" }
+  ]
+}

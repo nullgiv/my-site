@@ -1,0 +1,35 @@
+
+{
+  "common": {
+    "searchPlaceholder": "Search...",
+    "sortLabel": "Sort",
+    "filterLabel": "Filter",
+    "backButton": "Back",
+    "downloadButton": "Download",
+    "viewButton": "View",
+    "readButton": "Read",
+    "watchButton": "Watch",
+    "retryButton": "Retry",
+    "loading": "Loading...",
+    "notFound": "Not found.",
+    "themeToggle": "Toggle Theme"
+  },
+  "profile": {
+    "myArticles": "My Articles",
+    "favorites": "Favorites",
+    "history": "History",
+    "completedArticles": "Completed",
+    "favoritesDate": "Saved on",
+    "historyDate": "Viewed on",
+    "completedDate": "Completed on"
+  },
+  "skills": {
+    "loading": "Updating skills...",
+    "empty": "No skills found"
+  },
+  "articleDetail": {
+    "markAsRead": "Mark as Read",
+    "readComplete": "Completed!",
+    "authorLabel": "Author"
+  }
+}

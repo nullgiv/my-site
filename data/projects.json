@@ -1,0 +1,40 @@
+
+{
+  "items": [
+    {
+      "id": "HFT_ENGINE_V1",
+      "title": "High-Frequency Trading Engine",
+      "tech": "C++, Rust, DPDK, Python",
+      "kv_pair": { "key": "LATENCY_TARGET", "value": "< 10 microseconds" },
+      "bullets": [
+        "Ultra-low latency execution via Kernel-bypass networking.",
+        "Custom lock-free ring buffers for thread synchronization.",
+        "Event-driven architecture for multi-exchange arbitrage."
+      ],
+      "status": "SOURCE_CODE_AVAILABLE_ON_GH"
+    },
+    {
+      "id": "MED_VISION_AI",
+      "title": "AI-Powered Medical Imaging Diagnosis",
+      "tech": "PyTorch, FastAPI, ResNet-50, TorchServe",
+      "kv_pair": { "key": "ACCURACY", "value": "94% (Anomalous Detection)" },
+      "bullets": [
+        "Deep learning solution for X-Ray/MRI anomaly detection.",
+        "HIPAA-compliant data pipeline & instant heatmap generation.",
+        "Automated CI/CD retraining loop."
+      ],
+      "status": "REPO_PRIVATE_FOR_COMPLIANCE"
+    },
+    {
+      "id": "CORE_PORTFOLIO_V3",
+      "title": "Minimalist Digital Fortress",
+      "tech": "React, TypeScript, Vite",
+      "bullets": [
+        "File-based CMS architecture (Git-driven).",
+        "Custom virtual scrolling engine for O(1) rendering performance.",
+        "Zero-bloat, monochrome interface."
+      ],
+      "status": "LIVE_SYSTEM"
+    }
+  ]
+}

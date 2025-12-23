@@ -1,0 +1,40 @@
+
+{
+  "fullName": "NullGiv",
+  "siteLogo": "/assets/icons/icon-512x512.png",
+  "twitterHandle": "@NullGiv",
+  "alternateNames": [
+    "NullGiv",
+    "nullgiv",
+    "Null Giv",
+    "Giv",
+    "نال گیو",
+    "نال‌گیو"
+  ],
+  "profileImage": "https://picsum.photos/400/400?grayscale",
+  "jobTitle": "Vector Systems Architect | RAG Infrastructure",
+  "location": "Tehran, Iran",
+  "locationFlag": "🇮🇷",
+  "jobStatus": "open",
+  "languages": [
+    { "name": "English", "level": "Professional" },
+    { "name": "Persian", "level": "Native" }
+  ],
+  "typingTexts": [
+    "NullGiv (نال گیو)",
+    "Vector Systems Architect",
+    "RAG Infrastructure Lead",
+    "Distributed Systems Engineer",
+    "Rust & Go Specialist"
+  ],
+  "seo": {
+    "metaTitle": "NullGiv | Vector Systems Architect & RAG Specialist",
+    "metaDescription": "Official portfolio of NullGiv. Architecting high-performance semantic search pipelines, autonomous agents, and billion-scale vector infrastructure.",
+    "keywords": [
+      "NullGiv", "nullgiv", "نال گیو", "Null Giv",
+      "Vector Systems Architect", "RAG Infrastructure", "Semantic Search Engineering",
+      "High Performance Computing", "Rust", "Golang", "System Design", "Distributed Systems"
+    ],
+    "ogImage": "/assets/og-home.jpg"
+  }
+}

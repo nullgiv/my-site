@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    
+    <!-- PERFORMANCE: Hint Browsers regarding caching -->
+    <meta http-equiv="Cache-Control" content="public, max-age=31536000, immutable">
+    
+    <title>Ali Givshadi | Vector Systems Engineer</title>
+
+    <!-- CRITICAL CSS: Layer Zero Optimizations -->
+    <style>
+      /* --- GLOBAL RESET & GPU HINTS --- */
+      *, *::before, *::after { 
+        box-sizing: border-box; 
+        /* Remove mobile tap highlight color (Blue flash) */
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      html { 
+        -webkit-text-size-adjust: 100%; 
+        font-family: 'Inter', system-ui, sans-serif; 
+        line-height: 1.5;
+        height: 100%;
+        /* Eliminate scroll lag on mobile */
+        overscroll-behavior-y: none;
+        scroll-behavior: smooth;
+      }
+
+      body { 
+        margin: 0; 
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+        background-color: #ffffff;
+        color: #000000;
+        -webkit-font-smoothing: antialiased;
+        /* Accelerate painting */
+        transform: translateZ(0); 
+        backface-visibility: hidden;
+        /* Remove 300ms tap delay on old browsers & optimize interactions */
+        touch-action: manipulation; 
+      }
+
+      /* Dark Mode Base */
+      @media (prefers-color-scheme: dark) {
+        body { background-color: #000000; color: #ffffff; }
+      }
+
+      #root { 
+        display: flex; 
+        flex-direction: column; 
+        height: 100%; 
+        width: 100%;
+        /* Contain layout recalculations to root */
+        contain: layout style; 
+      }
+
+      /* --- FONT OPTIMIZATION: Zero Layout Shift --- */
+      @font-face {
+        font-family: 'Inter Fallback';
+        src: local('Arial');
+        ascent-override: 89.67%;
+        descent-override: 22.31%;
+        line-gap-override: 0%;
+        size-adjust: 107.6%;
+      }
+      body { font-family: 'Inter', 'Inter Fallback', sans-serif; }
+
+      /* --- PERFORMANCE CLASSES --- */
+      /* Use on long lists/articles to skip rendering off-screen content */
+      .cv-auto { 
+        content-visibility: auto; 
+        contain-intrinsic-size: 1px 500px; 
+      }
+      
+      /* GPU Promotion Class */
+      .gpu-accelerated {
+        transform: translateZ(0);
+        will-change: transform, opacity;
+      }
+
+      /* --- PRINT STYLES --- */
+      @media print {
+        body * { visibility: hidden; }
+        .printable-area, .printable-area * { visibility: visible; }
+        .printable-area { position: absolute; left: 0; top: 0; width: 100%; }
+        .no-print, header, nav, aside { display: none !important; }
+        html, body, #root { height: auto !important; overflow: visible !important; }
+      }
+    </style>
+
+    <!-- SEO & PWA -->
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="/assets/icons/icon.svg" type="image/svg+xml">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="search" type="application/opensearchdescription+xml" title="Ali Givshadi" href="/opensearch.xml">
+
+    <!-- FONTS: Async Load -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
+
+    <!-- TAILWIND -->
+    <script src="https://cdn.tailwindcss.com?plugins=typography" defer></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: { sans: ['Inter', 'Inter Fallback', 'sans-serif'] },
+            colors: {
+              ios: { bg: '#ffffff', bgDark: '#000000', text: '#000000', textDark: '#ffffff' }
+            }
+          }
+        }
+      }
+    </script>
+    
+
+<link rel="stylesheet" href="/index.css">
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "vite": "https://esm.sh/vite@^7.3.0",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2",
+    "vite-plugin-compression": "https://esm.sh/vite-plugin-compression@^0.5.1"
+  }
+}
+</script>
+  <script type="module" crossorigin src="/assets/index-BTnv_wOF.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/v-react-Busfyodu.js">
+</head>
+  <body class="bg-ios-bg dark:bg-ios-bgDark text-ios-text dark:text-ios-textDark">
+    <div id="root"></div>
+    <script>
+      try {
+        if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      } catch (_) {}
+    </script>
+</body>
+</html>

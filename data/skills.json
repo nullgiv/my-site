@@ -1,0 +1,4 @@
+{
+  "header": "[TECHNICAL_STACK_MATRIX]",
+  "content": "LAYER_0 (CORE_LANGUAGES):\n  - Go      [Level: Expert_Mode]\n  - Python  [Level: Advanced_Processing]\n\nLAYER_1 (VECTOR_INFRA):\n  - Milvus / Qdrant / Weaviate\n  - HNSW / IVFFLAT Indexing\n  - Semantic Search Pipelines\n\nLAYER_2 (PROTOCOLS):\n  - English [Bandwidth: Professional_Working]\n  - Persian [Bandwidth: Native_Interface]"
+}

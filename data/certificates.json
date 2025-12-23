@@ -1,0 +1,19 @@
+
+{
+  "items": [
+    {
+      "id": "c1",
+      "name": "Advanced Data Engineering",
+      "provider": "Coursera - Google",
+      "link": "#",
+      "image": "https://picsum.photos/seed/cert1/600/400"
+    },
+    {
+      "id": "c2",
+      "name": "AWS Cloud Architect",
+      "provider": "Amazon Web Services",
+      "link": "#",
+      "image": "https://picsum.photos/seed/cert2/600/400"
+    }
+  ]
+}
